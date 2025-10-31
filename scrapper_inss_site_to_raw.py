@@ -292,7 +292,7 @@ if __name__ == "__main__":
     scraper = INSSRetirementScraper()
     results = scraper.scrape_all_categories()
     
-    table_df = spark.read.table("raw_inss_crawled_data.direitos_aposentadoria")
+    table_df = spark.read.table("tcc_workspace_catalog.raw_inss_crawled_data.direitos_aposentadoria")
     latest_internal_updated_at = get_latest_updated_at(table_df)
     print(f"Latest internal updated_at: {latest_internal_updated_at}")
     
@@ -314,5 +314,5 @@ if __name__ == "__main__":
     scrapped_data = spark.createDataFrame(new_rows, schema=table_df.schema)
     scrapped_data = scrapped_data.filter(F.col("last_update_on_inss_site") > latest_internal_updated_at)
     scrapped_data.display()
-    scrapped_data.write.mode("append").saveAsTable("raw_inss_crawled_data.direitos_aposentadoria")
+    scrapped_data.write.mode("append").saveAsTable("tcc_workspace_catalog.raw_inss_crawled_data.direitos_aposentadoria")
     dbutils.jobs.taskValues.set("flag_new_records_ingested", "False" if scrapped_data.isEmpty() else "True")
