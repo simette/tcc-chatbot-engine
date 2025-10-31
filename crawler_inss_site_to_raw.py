@@ -1,8 +1,6 @@
 # Databricks notebook source
 !pip install requests beautifulsoup4 lxml
 
-# COMMAND ----------
-
 import logging
 import requests
 from bs4 import BeautifulSoup
@@ -12,8 +10,6 @@ from datetime import datetime
 import json
 from typing import Dict, List, Optional, Tuple
 import pyspark.sql.functions as F
-
-# COMMAND ----------
 
 class INSSRetirementScraper:
     """Scraper for INSS retirement information pages"""
