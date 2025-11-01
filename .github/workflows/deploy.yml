@@ -26,4 +26,4 @@ jobs:
       - uses: databricks/setup-cli@main
       - name: Update git folder
         # Set your workspace path and branch name here
-        run: databricks repos update /Workspace/Repos/gaby.simette@gmail.com/tcc-scrapper --branch main
+        run: databricks repos update /Workspace/Repos/gaby.simette@gmail.com/tcc-chatbot-engine --branch main
