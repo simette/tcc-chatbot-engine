@@ -28,7 +28,7 @@ def upsert_to_delta(microBatchOutputDF, batchId):
 query = df.writeStream \
     .foreachBatch(upsert_to_delta) \
     .outputMode("update") \
-    .option("checkpointLocation", "dbfs:/FileStore/tables/checkpoints/direitos_aposentadoria") \
+    .option("checkpointLocation", "/Volumes/tcc_workspace_catalog/raw_inss_crawled_data/checkpoint_volume/direitos_aposentadoria") \
     .trigger(availableNow=True) \
     .start()
 
