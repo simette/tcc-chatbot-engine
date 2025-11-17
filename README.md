@@ -22,6 +22,11 @@ Este repositório contém as configurações e códigos para criar a *engine* qu
 │   ├── creating_vector_endpoint.py      # Criação do endpoint de busca vetorial
 │   └── inss_data_tables_ddls.py         # DDLs das tabelas do banco de dados
 │
+├── rag/
+│   ├── create_model_chain.py            # Registro da aplicação RAG no mlflow
+│   └── rag_chain.py                     # Definição da chain utilizada no modelo
+│   └── constants.py                     # Definição de constantes utilizadas nos dois arquivos
+│
 ├── scrapper/
 │   ├── scrapper_inss_site_to_raw.py     # Extração inicial dos dados do site INSS e registro desses dados na tabela raw
 │   ├── raw_inss_site_data_to_consolidated_table.py  # Registro dos dados extraídos em uma tabela consolidada
